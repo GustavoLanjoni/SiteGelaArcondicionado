@@ -207,39 +207,7 @@ nav ul li {
 }
 
 /* Diferenciais */
-.diferenciais {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 20px;
-    background-color: #fff;
-}
 
-.diferencial {
-    text-align: center;
-    max-width: 350px;
-    padding: 20px;
-    transition: transform 0.3s ease;
-}
-
-.diferencial:hover {
-    transform: translateY(-10px);
-}
-
-.diferencial img {
-    width: 80px;
-    margin-bottom: 20px;
-}
-
-.diferencial h3 {
-    font-size: 24px;
-    color: #004b6d;
-    font-weight: 600;
-}
-
-.diferencial p {
-    color: #666;
-    font-size: 16px;
-}
 
 /* Depoimentos */
 .depoimentos {
