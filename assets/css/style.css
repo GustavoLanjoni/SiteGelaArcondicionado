@@ -28,6 +28,8 @@ header {
 
 header img {
     width: 150px;
+    transition: width 0.3s ease;
+    /* Adicionando uma transição para o tamanho da imagem */
 }
 
 nav {
@@ -59,6 +61,7 @@ nav a:hover {
     width: 30px;
     height: 3px;
     background-color: #fff;
+    transition: transform 0.3s ease;
 }
 
 nav ul {
@@ -144,7 +147,8 @@ nav ul li {
 
 /* Seção Sobre */
 .sobre {
-    background-color: #f4f7fb; /* Cor de fundo suave */
+    background-color: #f4f7fb;
+    /* Cor de fundo suave */
     padding: 60px 20px;
     text-align: center;
     position: relative;
@@ -241,17 +245,37 @@ nav ul li {
         transform: translateY(-10vh) rotate(0deg);
         opacity: 1;
     }
+
     100% {
         transform: translateY(100vh) rotate(360deg);
         opacity: 0;
     }
 }
 
-.snowflake:nth-child(1) { left: 10%; animation-duration: 10s; }
-.snowflake:nth-child(2) { left: 25%; animation-duration: 15s; }
-.snowflake:nth-child(3) { left: 50%; animation-duration: 12s; }
-.snowflake:nth-child(4) { left: 75%; animation-duration: 18s; }
-.snowflake:nth-child(5) { left: 90%; animation-duration: 20s; }
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+}
+
+.snowflake:nth-child(2) {
+    left: 25%;
+    animation-duration: 15s;
+}
+
+.snowflake:nth-child(3) {
+    left: 50%;
+    animation-duration: 12s;
+}
+
+.snowflake:nth-child(4) {
+    left: 75%;
+    animation-duration: 18s;
+}
+
+.snowflake:nth-child(5) {
+    left: 90%;
+    animation-duration: 20s;
+}
 
 /* ======= Título ======= */
 .diferenciais h2 {
@@ -402,7 +426,7 @@ nav ul li {
 
 /* Faq */
 .faq-personalizado {
-    
+
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
@@ -484,7 +508,8 @@ footer {
 }
 
 /* Seção Desenvolvedor */
-.desenvolvedor {
+.desenvolvedor,
+.empresa {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 25px;
     border-radius: 12px;
@@ -492,27 +517,30 @@ footer {
     transition: transform 0.3s ease;
 }
 
-
-.desenvolvedor h3 {
+.desenvolvedor h3,
+.empresa h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: #fff;
     font-weight: 500;
 }
 
-.desenvolvedor p {
+.desenvolvedor p,
+.empresa p {
     font-size: 1rem;
     margin: 10px 0;
     color: #ddd;
 }
 
-.desenvolvedor a {
+.desenvolvedor a,
+.empresa a {
     font-weight: 500;
     color: #4CAF50;
     transition: color 0.3s ease;
 }
 
-.desenvolvedor a:hover {
+.desenvolvedor a:hover,
+.empresa a:hover {
     color: #fff;
 }
 
@@ -549,144 +577,169 @@ footer {
     font-size: 1.6rem;
 }
 
-/* Seção Empresa */
-.empresa {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
-}
-
-
-
-.empresa h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #fff;
-    font-weight: 500;
-}
-
-.empresa p {
-    font-size: 1rem;
-    margin: 10px 0;
-    color: #ddd;
-}
-
-.empresa a {
-    color: #4CAF50;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.empresa a:hover {
-    color: #fff;
-}
-
-/* Copyright */
-.copyright {
-    margin-top: 40px;
-    font-size: 1rem;
-    color: #ddd;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 400;
-}
-
-/* Estilos adicionais para as redes sociais da empresa */
-.empresa .redes-sociais {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.empresa .redes-sociais a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 1.5rem;
-    color: #fff;
-    transition: all 0.3s ease;
-    padding: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.empresa .redes-sociais a:hover {
-    background-color: #fff;
-    color: #4CAF50;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
-.empresa .redes-sociais i {
-    font-size: 1.6rem;
-}
 
 /* Estilos para o botão flutuante do WhatsApp */
 .whatsapp-button {
     position: fixed;
-    bottom: 20px; /* Distância do fundo */
-    right: 20px; /* Distância da lateral direita */
-    background-color: #25d366; /* Cor verde do WhatsApp */
-    border-radius: 50%; /* Deixa o botão redondo */
-    padding: 20px; /* Tamanho do botão */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    color: white; /* Cor do ícone */
-    font-size: 2.5rem; /* Tamanho do ícone */
+    bottom: 20px;
+    /* Distância do fundo */
+    right: 20px;
+    /* Distância da lateral direita */
+    background-color: #25d366;
+    /* Cor verde do WhatsApp */
+    border-radius: 50%;
+    /* Deixa o botão redondo */
+    padding: 20px;
+    /* Tamanho do botão */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    color: white;
+    /* Cor do ícone */
+    font-size: 2.5rem;
+    /* Tamanho do ícone */
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease-in-out; /* Transição suave */
-    z-index: 9999; /* Garante que o botão esteja no topo */
-    width: 70px; /* Largura do botão */
-    height: 70px; /* Altura do botão */
-    text-decoration: none; /* Remove o sublinhado do link */
+    transition: all 0.3s ease-in-out;
+    /* Transição suave */
+    z-index: 9999;
+    /* Garante que o botão esteja no topo */
+    width: 70px;
+    /* Largura do botão */
+    height: 70px;
+    /* Altura do botão */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
 }
 
 /* Efeito de hover: aumenta o botão e muda a cor */
 .whatsapp-button:hover {
-    background-color: #128c7e; /* Cor de fundo mais escura */
-    transform: scale(1.1); /* Aumenta o botão */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+    background-color: #128c7e;
+    /* Cor de fundo mais escura */
+    transform: scale(1.1);
+    /* Aumenta o botão */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    /* Sombra mais forte */
 }
 
 /* Adiciona um efeito suave no ícone */
 .whatsapp-button i {
-    transition: transform 0.3s ease; /* Transição suave para o ícone */
+    transition: transform 0.3s ease;
+    /* Transição suave para o ícone */
 }
 
 /* Efeito de hover no ícone: gira levemente */
 .whatsapp-button:hover i {
-    transform: rotate(15deg); /* Roda o ícone */
+    transform: rotate(15deg);
+    /* Roda o ícone */
 }
 
 
+/*Neve*/
+
+/* Estilos básicos para o efeito de neve */
+
+
+.snowflake {
+    position: absolute;
+    top: -10px;  /* Inicia acima da tela */
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+/* Animação da queda da neve */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);  /* Vai até o final da tela */
+    }
+}
 
 
 /* Responsividade */
 @media (max-width: 768px) {
+
+    .title {
+
+        font-size: 20px;
+
+    }
+
     header {
-        flex-direction: column;
-        text-align: center;
+        justify-content: space-between; /* Menu no canto direito */
+    }
+
+    header img {
+        width: 120px; /* Reduzindo o tamanho da imagem em telas menores */
     }
 
     nav {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
+        display: none; /* Escondendo o menu por padrão */
+        flex-direction: column; /* Fazendo o menu ser exibido na vertical */
+        position: absolute;
+        top: 70px; /* Ajuste para o menu aparecer abaixo do cabeçalho */
+        right: 0; /* Alinhando o menu à direita */
+        background-color: #004b6d;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        width: 200px; /* Largura do menu */
+        transform: translateY(-100%); /* Inicialmente escondido acima da tela */
+        transition: transform 0.3s ease-in-out; /* Suavizando a animação de exibição */
     }
 
     nav.active {
+        display: flex; /* Mostrar o menu quando a classe 'active' for adicionada */
+        transform: translateY(0); /* Descer o menu para sua posição normal */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Itens do menu em coluna */
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espaçamento entre os itens na coluna */
+    }
+
+    /* Estilizando os itens do menu */
+    nav ul li a {
+        padding: 12px 20px; /* Aumentando o tamanho do clique nos itens */
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #ffd700; /* Cor de fundo quando o item é hover */
+        color: #004b6d; /* Cor do texto quando hover */
+    }
+
+    /* Menu Hambúrguer */
+    .menu-toggle {
         display: flex;
     }
 
-    .menu-toggle {
-        display: flex;
+    .menu-toggle.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 
     .cards {
@@ -723,6 +776,28 @@ footer {
         width: 90%;
         margin-bottom: 20px;
     }
+
+    .rodape-container {
+        grid-template-columns: 2fr;
+        /* Coloca as seções uma embaixo da outra */
+        padding: 20px;
+    }
+
+    .desenvolvedor,
+    .empresa {
+        width: 90%;
+        /* Adiciona uma largura para as seções */
+        margin: 0 auto;
+        /* Centraliza as seções */
+        text-align: center;
+    }
+
+    .redes-sociais {
+        justify-content: center;
+    }
+
+
+
 }
 
 @media (max-width: 480px) {
@@ -740,5 +815,38 @@ footer {
     .depoimentos h2,
     .faq h2 {
         font-size: 28px;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+
+    .rodape-container {
+        padding: 0 10px;
+    }
+
+    .desenvolvedor,
+    .empresa {
+        width: 90%;
+        /* As seções ficam com 90% da largura da tela */
+        margin: 0 auto;
+        /* Centraliza as seções */
+        text-align: center;
+    }
+
+    .redes-sociais a {
+        font-size: 1.4rem;
+    }
+
+    .desenvolvedor h3,
+    .empresa h3 {
+        font-size: 1.3rem;
+        /* Ajusta o tamanho do título para telas pequenas */
+    }
+
+    .desenvolvedor p,
+    .empresa p {
+        font-size: 0.9rem;
+        /* Ajusta o tamanho do texto para telas pequenas */
     }
 }
