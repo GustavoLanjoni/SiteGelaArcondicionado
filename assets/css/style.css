@@ -1,0 +1,376 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004b6d;
+    padding: 20px 40px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header img {
+    width: 150px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+/* Banner */
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Seção de Serviços */
+.servicos {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Seção Sobre */
+.sobre {
+    background-color: #f4f7fb; /* Cor de fundo suave */
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sobre h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #004b6d;
+    text-transform: uppercase;
+}
+
+.sobre p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.valores {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.valor {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.valor h3 {
+    font-size: 22px;
+    color: #004b6d;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.valor p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Diferenciais */
+.diferenciais {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.diferencial {
+    text-align: center;
+    max-width: 350px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.diferencial:hover {
+    transform: translateY(-10px);
+}
+
+.diferencial img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.diferencial h3 {
+    font-size: 24px;
+    color: #004b6d;
+    font-weight: 600;
+}
+
+.diferencial p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Depoimentos */
+.depoimentos {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #004b6d;
+    font-weight: 700;
+}
+
+.depoimento {
+    margin-bottom: 30px;
+    font-style: italic;
+    font-size: 18px;
+    color: #555;
+}
+
+.depoimento span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #004b6d;
+}
+
+/* Faq */
+.faq {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.faq h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #004b6d;
+    font-weight: 700;
+}
+
+.pergunta h3 {
+    font-size: 22px;
+    color: #004b6d;
+    margin-bottom: 10px;
+}
+
+.pergunta p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Rodapé */
+footer {
+    background-color: #004b6d;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 16px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .diferenciais {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre h2 {
+        font-size: 28px;
+    }
+
+    .sobre p {
+        font-size: 16px;
+    }
+
+    .valores {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .valor {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 16px;
+    }
+
+    .banner-content {
+        font-size: 1.5rem;
+    }
+
+    .servicos h2,
+    .sobre h2,
+    .diferenciais h2,
+    .depoimentos h2,
+    .faq h2 {
+        font-size: 28px;
+    }
+}
