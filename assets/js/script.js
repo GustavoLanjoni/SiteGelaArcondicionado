@@ -16,3 +16,5 @@ expandTrigger.addEventListener('click', () => {
     // Rotaciona a seta quando o conteúdo for exibido
     arrow.classList.toggle('rotate');
 });
+
+

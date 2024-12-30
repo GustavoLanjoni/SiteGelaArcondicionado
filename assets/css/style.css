@@ -207,72 +207,465 @@ nav ul li {
 }
 
 /* Diferenciais */
+.diferenciais {
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 1.5rem;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+}
 
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    color: #fff;
+    font-size: 1.2rem;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.snowflake:nth-child(1) { left: 10%; animation-duration: 10s; }
+.snowflake:nth-child(2) { left: 25%; animation-duration: 15s; }
+.snowflake:nth-child(3) { left: 50%; animation-duration: 12s; }
+.snowflake:nth-child(4) { left: 75%; animation-duration: 18s; }
+.snowflake:nth-child(5) { left: 90%; animation-duration: 20s; }
+
+/* ======= Título ======= */
+.diferenciais h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* ======= FAQ ======= */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    display: none;
+    color: #f0f0f0;
+    font-size: 1rem;
+}
+
+/* ======= FAQ Aberto ======= */
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
 
 /* Depoimentos */
+/* Estilização Geral */
 .depoimentos {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
     text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #f9fafc, #e6ecf3);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .depoimentos h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #004b6d;
-    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Container de Depoimentos */
+.depoimentos-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .depoimento {
-    margin-bottom: 30px;
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.depoimento p {
     font-style: italic;
-    font-size: 18px;
     color: #555;
-}
-
-.depoimento span {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #004b6d;
-}
-
-/* Faq */
-.faq {
-    padding: 60px 20px;
-    background-color: #fff;
-}
-
-.faq h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #004b6d;
-    font-weight: 700;
-}
-
-.pergunta h3 {
-    font-size: 22px;
-    color: #004b6d;
     margin-bottom: 10px;
 }
 
-.pergunta p {
-    font-size: 18px;
+.depoimento span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Controles */
+.controles {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.controles button {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.controles button:hover {
+    background: #005ea6;
+    transform: scale(1.1);
+}
+
+.controles i {
+    pointer-events: none;
+}
+
+
+/* Faq */
+.faq-personalizado {
+    
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9fafc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-personalizado h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-pergunta {
+    width: 100%;
+    background: #fff;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-pergunta:hover {
+    background: #f1f5f9;
+}
+
+.faq-pergunta i {
+    transition: transform 0.3s;
+}
+
+.faq-item.ativo .faq-pergunta i {
+    transform: rotate(180deg);
+}
+
+.faq-resposta {
+    display: none;
+    padding: 15px;
+    background: #fdfdfd;
     color: #666;
+    border-top: 1px solid #ddd;
 }
 
 /* Rodapé */
 footer {
-    background-color: #004b6d;
-    color: white;
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px;
     text-align: center;
-    padding: 30px;
-    font-size: 16px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
-footer p {
-    margin: 0;
+/* Contêiner do Rodapé */
+.rodape-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
 }
+
+/* Seção Desenvolvedor */
+.desenvolvedor {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+
+.desenvolvedor h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.desenvolvedor p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.desenvolvedor a {
+    font-weight: 500;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+}
+
+.desenvolvedor a:hover {
+    color: #fff;
+}
+
+/* Redes Sociais */
+.redes-sociais {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.redes-sociais a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.redes-sociais a:hover {
+    background-color: #fff;
+    color: #4CAF50;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.redes-sociais i {
+    font-size: 1.6rem;
+}
+
+/* Seção Empresa */
+.empresa {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+
+
+.empresa h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.empresa p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.empresa a {
+    color: #4CAF50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.empresa a:hover {
+    color: #fff;
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #ddd;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* Estilos adicionais para as redes sociais da empresa */
+.empresa .redes-sociais {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.empresa .redes-sociais a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.empresa .redes-sociais a:hover {
+    background-color: #fff;
+    color: #4CAF50;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.empresa .redes-sociais i {
+    font-size: 1.6rem;
+}
+
+/* Estilos para o botão flutuante do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da lateral direita */
+    background-color: #25d366; /* Cor verde do WhatsApp */
+    border-radius: 50%; /* Deixa o botão redondo */
+    padding: 20px; /* Tamanho do botão */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: white; /* Cor do ícone */
+    font-size: 2.5rem; /* Tamanho do ícone */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out; /* Transição suave */
+    z-index: 9999; /* Garante que o botão esteja no topo */
+    width: 70px; /* Largura do botão */
+    height: 70px; /* Altura do botão */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+/* Efeito de hover: aumenta o botão e muda a cor */
+.whatsapp-button:hover {
+    background-color: #128c7e; /* Cor de fundo mais escura */
+    transform: scale(1.1); /* Aumenta o botão */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+/* Adiciona um efeito suave no ícone */
+.whatsapp-button i {
+    transition: transform 0.3s ease; /* Transição suave para o ícone */
+}
+
+/* Efeito de hover no ícone: gira levemente */
+.whatsapp-button:hover i {
+    transform: rotate(15deg); /* Roda o ícone */
+}
+
+
+
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -301,9 +694,16 @@ footer p {
         align-items: center;
     }
 
-    .diferenciais {
-        flex-direction: column;
-        align-items: center;
+    .diferenciais h2 {
+        font-size: 2rem;
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .faq-answer {
+        font-size: 0.9rem;
     }
 
     .sobre h2 {
